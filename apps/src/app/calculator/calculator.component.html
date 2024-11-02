@@ -1,0 +1,40 @@
+
+<div class="container">
+
+  <div class="calculator-body">
+    <div>
+      
+      <textarea class="output"  name="output" cols="40" rows="2"> {{outputBuffer.join(' ')}}
+         {{finalOutput}} </textarea>
+    </div>
+    <div class="row">
+      <input class="control-button" type="button" value="AC" (click)="apply('AC')"/>
+      <input class="control-button" type="button" value="+/-" (click)="apply('+/-')"/>
+      <input class="control-button" type="button" value="%" (click)="apply('%')"/>
+      <input class="operator" type="button" value="&#xF7;" (click)="apply('/')"/>
+    </div>
+    <div class="row">
+      <input class="numbers" type="button" value="7" (click)="apply(7)"/>
+      <input class=" numbers" type="button" value="8" (click)="apply(8)"/>
+      <input class=" numbers" type="button" value="9" (click)="apply(9)"/>
+      <input class=" operator" type="button" value="x" (click)="apply('x')"/>
+    </div>
+    <div class="row">
+      <input class=" numbers" type="button" value="4" (click)="apply(4)"/>
+      <input class=" numbers" type="button" value="5" (click)="apply(5)"/>
+      <input class=" numbers" type="button" value="6" (click)="apply(6)"/>
+      <input class=" operator" type="button" value="-" (click)="apply('-')"/>
+    </div>
+    <div class="row">
+      <input class=" numbers" type="button" value="1" (click)="apply(1)"/>
+      <input class=" numbers" type="button" value="2" (click)="apply(2)"/>
+      <input class=" numbers" type="button" value="3" (click)="apply(3)"/>
+      <input class=" operator" type="button" value="+" (click)="apply('+')"/>
+    </div>
+    <div class="row">
+      <input class=" numbers zero" type="button" value="0" (click)="apply(0)"/>
+      <input class=" numbers" type="button" value="." (click)="apply('.')"/>
+      <input class=" operator" type="button" value="=" (click)="apply('=')"/>
+    </div>
+  </div>
+</div>

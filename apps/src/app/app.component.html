@@ -1,38 +1,25 @@
+<p-menubar [model]="items" >
+  <ng-template pTemplate="item" let-item>
+    <ng-container *ngIf="item.route; else urlRef">
+        <a [routerLink]="item.route" class="p-menuitem-link">
+            <span [class]="item.icon"></span>
+            <span class="ml-2">{{ item.label }}</span>
+        </a>
+    </ng-container>
+    <ng-template #urlRef>
+        <a *ngIf="item.url; else noLink" [href]="item.url" class="p-menuitem-link">
+            <span [class]="item.icon"></span>
+            <span class="ml-2">{{ item.label }}</span>
+        </a>
+    </ng-template>
+    <ng-template #noLink>
+        <div class="p-menuitem-link">
+            <span [class]="item.icon"></span>
+            <span class="ml-2">{{ item.label }}</span>
+            <span class="pi pi-fw pi-angle-down ml-2"></span>
+        </div>
+    </ng-template>
+</ng-template>
+</p-menubar>
 
-<div class="container">
-
-  <div class="calculator-body">
-    <div>
-      <textarea class="output"  name="output" cols="40" rows="2">0.0 </textarea>
-    </div>
-    <div class="row">
-      <input class="control-button" type="button" value="AC" onclick=""/>
-      <input class="control-button" type="button" value="+/-" onclick=""/>
-      <input class="control-button" type="button" value="%" onclick=""/>
-      <input class="control-button" type="button" value="&#xF7;" onclick=""/>
-    </div>
-    <div class="row">
-      <input class="numbers" type="button" value="7" onclick=""/>
-      <input class=" numbers" type="button" value="8" onclick=""/>
-      <input class=" numbers" type="button" value="9" onclick=""/>
-      <input class=" operator" type="button" value="X" onclick=""/>
-    </div>
-    <div class="row">
-      <input class=" numbers" type="button" value="4" onclick=""/>
-      <input class=" numbers" type="button" value="5" onclick=""/>
-      <input class=" numbers" type="button" value="6" onclick=""/>
-      <input class=" operator" type="button" value="-" onclick=""/>
-    </div>
-    <div class="row">
-      <input class=" numbers" type="button" value="1" onclick=""/>
-      <input class=" numbers" type="button" value="2" onclick=""/>
-      <input class=" numbers" type="button" value="3" onclick=""/>
-      <input class=" operator" type="button" value="+" onclick=""/>
-    </div>
-    <div class="row">
-      <input class=" numbers zero" type="button" value="0" onclick=""/>
-      <input class=" numbers" type="button" value="." onclick=""/>
-      <input class=" operator" type="button" value="=" onclick=""/>
-    </div>
-  </div>
-</div>
+<router-outlet></router-outlet>

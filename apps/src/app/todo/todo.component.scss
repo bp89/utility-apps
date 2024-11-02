@@ -1,0 +1,22 @@
+ul {
+    list-style-type: none;
+    font-size: 1.5rem;
+    padding-left: 0;
+    margin-left: 0;
+    color:#6c687d
+}
+
+
+.todo-task-input {
+    border: none;
+    border-bottom: 1px solid #6e5bcd;
+    border-radius: 2px;
+    padding: 4px;
+    width: 50rem;
+    font-size: 1.5rem;
+}
+
+
+.todo-task-input:focus-visible {
+    outline: none;
+}

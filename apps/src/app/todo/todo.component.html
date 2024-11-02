@@ -1,0 +1,19 @@
+<div class="todo-container">
+  <ul>
+    @for(item of tasks; track item){
+    <li>{{item.title}} {{item.timestamp}}</li>
+    }
+    @empty {
+    No Tasks added
+    }
+  </ul>
+  <div class="d-flex ">
+  <input type="text" pInputText class="todo-task-input" placeholder="Please add your task"
+    [(ngModel)]="newTaskInputControl" (keypress)="submitTask($event)" />
+ 
+  <p-floatLabel>
+    <p-calendar [showTime]="true" [(ngModel)]="newTaskTimeControl" [showIcon]="true" [showButtonBar]="true"></p-calendar>
+    <label for="birth_date">target Date</label>
+</p-floatLabel>
+</div>
+</div>
